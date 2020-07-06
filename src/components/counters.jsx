@@ -11,6 +11,12 @@ class Counters extends Component {
     ],
   };
 
+  header = {
+    fontSize: 30,
+
+    fontWeight: 'bold',
+  };
+
   handleReset = () => {
     const counters = this.state.counters.map(c => {
       c.value = 0;
@@ -26,13 +32,16 @@ class Counters extends Component {
 
   render() {
     return (
-      <div>
-        {/* <button
+      <div className="container">
+        <h1 style={this.header} className="text-center text-dark">
+          Counter in React
+        </h1>
+        <button
           onClick={this.props.handleReset}
           className="btn btn-success btn-sm m-2"
         >
           Reset
-        </button> */}
+        </button>
         {this.state.counters.map(counter => (
           <Counter
             key={counter.id}
